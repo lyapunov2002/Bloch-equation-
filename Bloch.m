@@ -7,7 +7,7 @@ T1 = 0.6;
 gamma = 2*pi*42.58e6;    % Rapporto giromagnetico rad/s/T 
                          % (nota bene tali valori possono essere modificati a piacimento per visualizzare particolari evoluzioni
                          %  autonome del vettore (Mx,My,Mz)
-B0 = 10^(-6);            % T piccolo per vedere bene l'oscillazione
+B0 = 1e-6;            % T piccolo per vedere bene l'oscillazione
 %%-------------------------------------------------------------------------
 %% Matrice di stato
 A = [-1/T2,gamma*B0;-gamma*B0, -1/T2]; %Matrice della dinamica del sistema disaccoppiato nel piano (x,y)
@@ -16,7 +16,7 @@ A = [-1/T2,gamma*B0;-gamma*B0, -1/T2]; %Matrice della dinamica del sistema disac
 sys = ss(A,[],[],[]);   % [] lo uso perchè preferisco invece del definire matrici di 0 e usarle successivamente tale comando è equivalente 
 %%-------------------------------------------------------------------------
 %% Condizione iniziale
-x0 = [0;1]; 
+x0 = [1;0]; 
 %%-------------------------------------------------------------------------
 %% Tempo
 t = linspace(0,0.3,1000);
