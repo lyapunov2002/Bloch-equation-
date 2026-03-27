@@ -67,4 +67,3 @@ plot3(Mx,My,Mz);
 grid on;
 
 
-cccc;
